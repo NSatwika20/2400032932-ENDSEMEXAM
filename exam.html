@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .dashboard {
+    display: grid;
+    grid-template-areas:
+      "sidebar topbar"
+      "sidebar main";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 60px 1fr;
+    height: 100vh;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    background: #2c3e50;
+    color: #fff;
+    padding: 20px;
+  }
+
+  .topbar {
+    grid-area: topbar;
+    background: #34495e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .main {
+    grid-area: main;
+    padding: 20px;
+    background: #ecf0f1;
+    overflow-y: auto;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .dashboard {
+      grid-template-areas:
+        "topbar"
+        "main"
+        "sidebar";
+      grid-template-columns: 1fr;
+      grid-template-rows: 60px 1fr auto;
+    }
+    .sidebar {
+      padding: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="dashboard">
+    <div class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li>Home</li>
+        <li>Courses</li>
+        <li>Grades</li>
+        <li>Profile</li>
+      </ul>
+    </div>
+    <div class="topbar">
+      <h1>Student Dashboard</h1>
+    </div>
+    <div class="main">
+      <h2>Welcome!</h2>
+      <p>Main content goes here.</p>
+    </div>
+  </div>
+</body>
+</html>
